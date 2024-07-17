@@ -1,0 +1,14 @@
+@use '../../node_modules/@angular/material/index' as mat;
+@use 'light-theme' as lightTheme;
+@use '../app/toolbar/toolbar.component-theme' as toolbar-component;
+
+@include mat.core();
+
+html {
+  @include mat.all-component-themes(lightTheme.$light-theme);
+}
+
+@mixin create-light-theme() {
+  @include mat.all-component-colors(lightTheme.$light-theme);
+  @include toolbar-component.toolbar-theme(lightTheme.$light-theme, mat.get-theme-color(lightTheme.$light-theme, secondary, 90));
+}

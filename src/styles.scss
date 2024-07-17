@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+@use "@angular/material" as mat;
+@use 'sass:map';
+@use './app/toolbar/toolbar.component-theme' as toolbar-component;
+@use "assets/theme" as theme;
+
+@include mat.core();
+
+.light-theme {
+  @include theme.create-light-theme();
+}
+

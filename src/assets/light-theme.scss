@@ -1,0 +1,14 @@
+@use "../../node_modules/@angular/material/index" as mat;
+@use 'sass:map';
+
+@include mat.core();
+
+$m3-custom-light: (
+  color: (
+    theme-type: light,
+    primary: mat.$azure-palette,
+    tertiary: mat.$cyan-palette,
+  )
+);
+
+$light-theme: mat.define-theme($m3-custom-light);
