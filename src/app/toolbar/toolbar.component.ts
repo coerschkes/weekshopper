@@ -9,6 +9,7 @@ import {MatMenu, MatMenuItem, MatMenuTrigger} from "@angular/material/menu";
 import {MatSlideToggle} from "@angular/material/slide-toggle";
 import {NgStyle, TitleCasePipe} from "@angular/common";
 import {BrowserService} from "../browser.service";
+import {environment} from "../../environments/environment";
 
 @Component({
   selector: 'app-toolbar',
@@ -37,6 +38,7 @@ import {BrowserService} from "../browser.service";
 
 })
 export class ToolbarComponent {
+  protected readonly environment = environment;
 
   constructor(protected browserService: BrowserService) {
   }

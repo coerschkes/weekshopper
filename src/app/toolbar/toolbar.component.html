@@ -3,6 +3,7 @@
     <button mat-icon-button (click)="sidenav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
+    <h1 class="app-name">{{ environment.APP_NAME }}</h1>
     @if (!browserService.isMobile() && browserService.currentRoute() === '/items') {
       <span class="spacer"></span>
       <button class="non-mobile-fab" mat-fab extended>

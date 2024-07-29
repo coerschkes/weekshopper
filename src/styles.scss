@@ -1,6 +1,6 @@
 @use 'sass:map';
 @import 'assets/theme';
 
-* {
-  font-family: 'Roboto Mono', sans-serif;
+* :not(.mat-icon) {
+  font-family: 'Roboto Mono', sans-serif !important;
 }
