@@ -3,6 +3,13 @@
     <button mat-icon-button (click)="sidenav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
+    @if (!configService.isMobile() && configService.currentRoute() === '/items') {
+      <span class="spacer"></span>
+      <button class="non-mobile-fab" mat-fab extended>
+        Add
+        <mat-icon class="search-button">my_library_add</mat-icon>
+      </button>
+    }
   </mat-toolbar>
 
   <mat-sidenav-container hasBackdrop="true" class="sidenav-container">

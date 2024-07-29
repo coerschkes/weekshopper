@@ -1,15 +1,20 @@
 import {Injectable, Signal, signal, WritableSignal} from "@angular/core";
+import {Router} from "@angular/router";
 
 @Injectable({providedIn: 'root'})
 export class ConfigService {
   private _isMobile: WritableSignal<boolean> = signal(false);
 
-  constructor() {
+  constructor(private _router: Router) {
     this.updateIsMobile()
   }
 
   get isMobile(): Signal<boolean> {
     return this._isMobile.asReadonly();
+  }
+
+  get currentRoute(): Signal<string> {
+    return signal(this._router.url);
   }
 
   updateIsMobile() {

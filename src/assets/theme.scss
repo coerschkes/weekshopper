@@ -1,5 +1,6 @@
-@use '../app/toolbar/toolbar.component-theme' as toolbar-component;
 @use '@angular/material' as mat;
+@use '../app/toolbar/toolbar.component-theme' as toolbar-component;
+@use '../app/items/items.component-theme' as items-component;
 
 @include mat.core();
 $theme-palette: (
@@ -141,5 +142,6 @@ $theme: mat.define-theme((
 html {
   @include mat.all-component-themes($theme);
   @include toolbar-component.toolbar-theme($theme);
+  @include items-component.items-theme($theme);
   background-color: mat.get-theme-color($theme, surface);
 }
