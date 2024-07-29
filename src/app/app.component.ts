@@ -1,7 +1,7 @@
 import {Component, HostBinding, HostListener} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {ToolbarComponent} from "./toolbar/toolbar.component";
-import {ConfigService} from "./config.service";
+import {BrowserService} from "./browser.service";
 
 @Component({
   selector: 'app-root',
@@ -13,7 +13,7 @@ import {ConfigService} from "./config.service";
 export class AppComponent {
   title = 'weekshopper';
 
-  constructor(private _configService: ConfigService) {
+  constructor(private _configService: BrowserService) {
   }
 
   @HostListener('window:resize', ['$event'])

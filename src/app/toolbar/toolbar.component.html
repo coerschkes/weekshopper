@@ -3,7 +3,7 @@
     <button mat-icon-button (click)="sidenav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
-    @if (!configService.isMobile() && configService.currentRoute() === '/items') {
+    @if (!browserService.isMobile() && browserService.currentRoute() === '/items') {
       <span class="spacer"></span>
       <button class="non-mobile-fab" mat-fab extended>
         Add
@@ -14,7 +14,7 @@
 
   <mat-sidenav-container hasBackdrop="true" class="sidenav-container">
     <mat-sidenav class="sidenav" #sidenav mode="side" fixedInViewport="true"
-                 fixedTopGap="{{configService.isMobile() ? 52 : 60}}">
+                 fixedTopGap="{{browserService.isMobile() ? 52 : 60}}">
       <mat-nav-list>
         <a class="sidenav-element" mat-list-item routerLink="/" (click)="sidenav.toggle()">Home</a>
         <a class="sidenav-element" mat-list-item routerLink="/items" (click)="sidenav.toggle()">Items</a>

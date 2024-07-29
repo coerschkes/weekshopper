@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {ConfigService} from "../config.service";
+import {BrowserService} from "../browser.service";
 import {MatIcon} from "@angular/material/icon";
 import {MatFabButton} from "@angular/material/button";
 
@@ -14,7 +14,7 @@ import {MatFabButton} from "@angular/material/button";
   styleUrl: './items.component.scss',
 })
 export class ItemsComponent {
-  constructor(protected configService: ConfigService) {
+  constructor(protected browserService: BrowserService) {
   }
 
 }

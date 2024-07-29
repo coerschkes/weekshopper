@@ -2,7 +2,7 @@ import {Injectable, Signal, signal, WritableSignal} from "@angular/core";
 import {Router} from "@angular/router";
 
 @Injectable({providedIn: 'root'})
-export class ConfigService {
+export class BrowserService {
   private _isMobile: WritableSignal<boolean> = signal(false);
 
   constructor(private _router: Router) {
