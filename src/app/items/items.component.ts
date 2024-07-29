@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FabService} from "../shared/fab-loader/fab.service";
+import {FabService} from "../shared/fab/fab.service";
 
 @Component({
   selector: 'app-items',
@@ -12,7 +12,6 @@ export class ItemsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log("creating fab")
     this.fabService.createFabForRoute({
       Route: "/items",
       DisplayName: "Add",

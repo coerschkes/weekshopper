@@ -14,7 +14,7 @@ export interface RouteMapping {
 }
 
 @Component({
-  selector: 'app-fab-loader',
+  selector: 'app-fab',
   standalone: true,
   imports: [
     MatFabButton,

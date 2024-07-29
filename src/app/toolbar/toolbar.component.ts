@@ -10,7 +10,7 @@ import {MatSlideToggle} from "@angular/material/slide-toggle";
 import {NgStyle, TitleCasePipe} from "@angular/common";
 import {BrowserService} from "../browser.service";
 import {environment} from "../../environments/environment";
-import {FabComponent} from "../shared/fab-loader/fab.component";
+import {FabComponent} from "../shared/fab/fab.component";
 
 @Component({
   selector: 'app-toolbar',
