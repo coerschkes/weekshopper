@@ -8,6 +8,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatMenu, MatMenuItem, MatMenuTrigger} from "@angular/material/menu";
 import {MatSlideToggle} from "@angular/material/slide-toggle";
 import {NgStyle, TitleCasePipe} from "@angular/common";
+import {ConfigService} from "../config.service";
 
 @Component({
   selector: 'app-toolbar',
@@ -36,4 +37,7 @@ import {NgStyle, TitleCasePipe} from "@angular/common";
 
 })
 export class ToolbarComponent {
+
+  constructor(protected configService: ConfigService) {
+  }
 }

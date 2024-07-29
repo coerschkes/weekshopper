@@ -141,4 +141,5 @@ $theme: mat.define-theme((
 html {
   @include mat.all-component-themes($theme);
   @include toolbar-component.toolbar-theme($theme);
+  background-color: mat.get-theme-color($theme, surface);
 }
