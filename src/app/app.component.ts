@@ -11,8 +11,6 @@ import {BrowserService} from "./browser.service";
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'weekshopper';
-
   constructor(private _configService: BrowserService) {
   }
 
