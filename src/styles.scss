@@ -1,11 +1,6 @@
-@use "@angular/material" as mat;
 @use 'sass:map';
-@use './app/toolbar/toolbar.component-theme' as toolbar-component;
-@use "assets/theme" as theme;
+@import 'assets/theme';
 
-@include mat.core();
-
-.light-theme {
-  @include theme.create-light-theme();
+* {
+  font-family: 'Roboto Mono', sans-serif;
 }
-

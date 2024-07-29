@@ -1,14 +1,144 @@
-@use '../../node_modules/@angular/material/index' as mat;
-@use 'light-theme' as lightTheme;
 @use '../app/toolbar/toolbar.component-theme' as toolbar-component;
+@use '@angular/material' as mat;
 
 @include mat.core();
+$theme-palette: (
+  primary: (
+    0: #000000,
+    10: #22005d,
+    20: #3a0093,
+    25: #4600af,
+    30: #5300cd,
+    35: #6100eb,
+    40: #6d23f9,
+    50: #8553ff,
+    60: #9d79ff,
+    70: #b69cff,
+    80: #cfbdff,
+    90: #e8ddff,
+    95: #f5eeff,
+    98: #fdf7ff,
+    99: #fffbff,
+    100: #ffffff,
+  ),
+  secondary: (
+    0: #000000,
+    10: #1e192b,
+    20: #332d41,
+    25: #3e384c,
+    30: #4a4458,
+    35: #554f64,
+    40: #625b71,
+    50: #7b748a,
+    60: #958da4,
+    70: #b0a7c0,
+    80: #cbc2dc,
+    90: #e8def8,
+    95: #f5eeff,
+    98: #fdf7ff,
+    99: #fffbff,
+    100: #ffffff,
+  ),
+  tertiary: (
+    0: #000000,
+    10: #31101d,
+    20: #4a2532,
+    25: #56303d,
+    30: #633b49,
+    35: #704654,
+    40: #7d5260,
+    50: #996a79,
+    60: #b58393,
+    70: #d29dad,
+    80: #efb8c8,
+    90: #ffd9e3,
+    95: #ffecf0,
+    98: #fff8f8,
+    99: #fffbff,
+    100: #ffffff,
+  ),
+  neutral: (
+    0: #000000,
+    10: #1c1b1e,
+    20: #313033,
+    25: #3d3b3e,
+    30: #48464a,
+    35: #545156,
+    40: #605d62,
+    50: #79767a,
+    60: #938f94,
+    70: #aeaaae,
+    80: #cac5ca,
+    90: #e6e1e6,
+    95: #f4eff4,
+    98: #fdf8fd,
+    99: #fffbff,
+    100: #ffffff,
+    4: #0f0e11,
+    6: #141316,
+    12: #201f22,
+    17: #2b292d,
+    22: #363438,
+    24: #3a383c,
+    87: #ddd8dd,
+    92: #ece7eb,
+    94: #f1ecf1,
+    96: #f7f2f7,
+  ),
+  neutral-variant: (
+    0: #000000,
+    10: #1d1a22,
+    20: #322f38,
+    25: #3d3a43,
+    30: #49454e,
+    35: #54515a,
+    40: #615d66,
+    50: #7a757f,
+    60: #948f99,
+    70: #aea9b4,
+    80: #cac4cf,
+    90: #e7e0ec,
+    95: #f5eefa,
+    98: #fdf7ff,
+    99: #fffbff,
+    100: #ffffff,
+  ),
+  error: (
+    0: #000000,
+    10: #410002,
+    20: #690005,
+    25: #7e0007,
+    30: #93000a,
+    35: #a80710,
+    40: #ba1a1a,
+    50: #de3730,
+    60: #ff5449,
+    70: #ff897d,
+    80: #ffb4ab,
+    90: #ffdad6,
+    95: #ffedea,
+    98: #fff8f7,
+    99: #fffbff,
+    100: #ffffff,
+  ),
+);
+
+$theme: mat.define-theme((
+  color: (
+    theme-type: dark,
+    primary: mat.$azure-palette,
+    tertiary: mat.$cyan-palette
+  ),
+  typography: (
+    brand-family: 'Comic Sans',
+    bold-weight: 900
+  ),
+  density: (
+    scale: -1
+  )
+));
 
 html {
-  @include mat.all-component-themes(lightTheme.$light-theme);
-}
-
-@mixin create-light-theme() {
-  @include mat.all-component-colors(lightTheme.$light-theme);
-  @include toolbar-component.toolbar-theme(lightTheme.$light-theme, mat.get-theme-color(lightTheme.$light-theme, secondary, 90));
+  @include mat.all-component-themes($theme);
+  @include toolbar-component.toolbar-theme($theme);
 }

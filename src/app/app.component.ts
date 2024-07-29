@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, HostBinding} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {ToolbarComponent} from "./toolbar/toolbar.component";
 
@@ -11,4 +11,7 @@ import {ToolbarComponent} from "./toolbar/toolbar.component";
 })
 export class AppComponent {
   title = 'weekshopper';
+
+  @HostBinding('class')
+  currentTheme: 'light-theme' | 'dark-theme' = 'light-theme';
 }
