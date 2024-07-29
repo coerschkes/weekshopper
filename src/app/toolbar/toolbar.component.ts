@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {AfterViewInit, Component, ViewChild} from '@angular/core';
 import {MatSidenav, MatSidenavContainer, MatSidenavContent} from "@angular/material/sidenav";
 import {MatToolbar} from "@angular/material/toolbar";
 import {MatFabButton, MatIconButton} from "@angular/material/button";
@@ -39,9 +39,15 @@ import {FabComponent} from "../shared/fab/fab.component";
   styleUrl: './toolbar.component.scss',
 
 })
-export class ToolbarComponent {
+export class ToolbarComponent implements AfterViewInit {
   protected readonly environment = environment;
 
+  @ViewChild("sidenav") sidenav!: MatSidenav;
+
   constructor(protected browserService: BrowserService) {
+  }
+
+  ngAfterViewInit(): void {
+    this.browserService.bindSidenav(this.sidenav);
   }
 }

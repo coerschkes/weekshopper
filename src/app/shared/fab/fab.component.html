@@ -5,9 +5,11 @@
       <mat-icon class="fab-icon">{{ mapping.DesktopIcon }}</mat-icon>
     </button>
   } @else {
-    <button class="mobile-fab" mat-fab (click)="mapping.Callback?.()">
-      <mat-icon class="fab-icon">{{ mapping.MobileIcon }}</mat-icon>
-    </button>
+    @if (!browserService.sidenavExpanded()) {
+      <button class="mobile-fab" mat-fab (click)="mapping.Callback?.()">
+        <mat-icon class="fab-icon">{{ mapping.MobileIcon }}</mat-icon>
+      </button>
+    }
   }
 </div>
 
