@@ -8,32 +8,10 @@
   right: 0;
 }
 
-.is-mobile .toolbar {
-  position: fixed;
-  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
-  z-index: 2;
-}
-
 h1.app-name {
   margin-left: 8px;
 }
 
-.spacer {
-  flex: 1 1 auto;
-}
-
-.profile-picture {
-  background-size: cover;
-  border-radius: 50%;
-  border: 0.5px solid;
-}
-
-
 .sidenav-container {
   flex: 1;
-}
-
-.non-mobile-add-fab {
-  margin: 8px;
-  height: 44px;
 }
