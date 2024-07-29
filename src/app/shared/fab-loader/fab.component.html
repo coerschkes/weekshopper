@@ -1,0 +1,13 @@
+<div *ngIf="fabLoaderService.matchedMapping(); let mapping;">
+  @if (!browserService.isMobile()) {
+    <button class="non-mobile-fab" mat-fab extended (click)="mapping.Callback?.()">
+      {{ mapping.DisplayName }}
+      <mat-icon>{{ mapping.DesktopIcon }}</mat-icon>
+    </button>
+  } @else {
+    <button class="mobile-fab" mat-fab (click)="mapping.Callback?.()">
+      <mat-icon>{{ mapping.MobileIcon }}</mat-icon>
+    </button>
+  }
+</div>
+
