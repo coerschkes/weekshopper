@@ -1,0 +1,18 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin fab-theme($theme) {
+  .desktop-fab{
+    background-color: mat.get-theme-color($theme, primary) !important;
+    color: mat.get-theme-color($theme, on-primary) !important;
+  }
+
+  .mobile-fab {
+    background-color: mat.get-theme-color($theme, primary) !important;
+    color: mat.get-theme-color($theme, on-primary) !important;
+  }
+
+  .fab-icon {
+    color: mat.get-theme-color($theme, primary, 20) !important;
+  }
+}
