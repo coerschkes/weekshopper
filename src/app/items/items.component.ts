@@ -7,10 +7,12 @@ import {MatDrawer, MatDrawerContainer, MatDrawerContent} from "@angular/material
 import {BrowserService} from "../browser.service";
 import {MatIcon} from "@angular/material/icon";
 import {ItemService} from "./item.service";
-import {MatCardModule} from "@angular/material/card";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {FormsModule} from "@angular/forms";
 import {MatInput} from "@angular/material/input";
+import {MatBottomSheet} from "@angular/material/bottom-sheet";
+import {EditItemComponent} from "./edit-item/edit-item.component";
+import {EditItemService} from "./edit-item/edit-item.service";
 
 @Component({
   selector: 'app-items',
@@ -42,7 +44,14 @@ export class ItemsComponent implements OnInit, AfterViewInit, OnDestroy {
 
   constructor(protected fabService: FabService,
               protected itemService: ItemService,
-              private _browserService: BrowserService) {
+              private _browserService: BrowserService,
+              private _bottomSheet: MatBottomSheet,
+              private _editItemService: EditItemService) {
+  }
+
+  openBottomSheet(item: Item): void {
+    this._editItemService.updateItem(item)
+    this._bottomSheet.open(EditItemComponent);
   }
 
   ngOnDestroy(): void {
@@ -69,7 +78,7 @@ export class ItemsComponent implements OnInit, AfterViewInit, OnDestroy {
       MobileIcon: "add",
       DesktopIcon: "my_library_add",
       Callback: () => {
-        console.log("test")
+        this.toggleDrawer()
       }
     })
   }
