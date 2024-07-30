@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnDestroy, ViewChild} from '@angular/core';
 import {MatSidenav, MatSidenavContainer, MatSidenavContent} from "@angular/material/sidenav";
 import {MatToolbar} from "@angular/material/toolbar";
 import {MatFabButton, MatIconButton} from "@angular/material/button";
@@ -39,7 +39,7 @@ import {FabComponent} from "../shared/fab/fab.component";
   styleUrl: './toolbar.component.scss',
 
 })
-export class ToolbarComponent implements AfterViewInit {
+export class ToolbarComponent implements AfterViewInit, OnDestroy {
   protected readonly environment = environment;
 
   @ViewChild("sidenav") sidenav!: MatSidenav;
@@ -47,7 +47,11 @@ export class ToolbarComponent implements AfterViewInit {
   constructor(protected browserService: BrowserService) {
   }
 
+  ngOnDestroy(): void {
+    this.browserService.removeDrawer(this.sidenav);
+  }
+
   ngAfterViewInit(): void {
-    this.browserService.bindSidenav(this.sidenav);
+    this.browserService.bindDrawer(this.sidenav);
   }
 }

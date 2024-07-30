@@ -9,7 +9,7 @@
   </mat-toolbar>
 
   <mat-sidenav-container hasBackdrop="true" class="sidenav-container">
-    <mat-sidenav class="sidenav" #sidenav mode="side" fixedInViewport="true"
+    <mat-sidenav class="sidenav" #sidenav mode="over" fixedInViewport="true"
                  fixedTopGap="{{browserService.isMobile() ? 52 : 60}}">
       <mat-nav-list>
         <a class="sidenav-element" mat-list-item routerLink="/" (click)="sidenav.toggle()">Home</a>
