@@ -10,12 +10,6 @@
   <tr
     mat-row
     *matRowDef="let row; columns: displayedColumns;"
-    (click)="callback(row)"
+    (click)="rowClicked.emit(row)"
   ></tr>
 </table>
-
-<!--<ul>-->
-<!--  @for (clickedRow of clickedRows; track clickedRow) {-->
-<!--    <li>Clicked on {{ clickedRow.name }}</li>-->
-<!--  }-->
-<!--</ul>-->

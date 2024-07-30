@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Input} from '@angular/core';
+import {AfterViewInit, Component, EventEmitter, Input, Output} from '@angular/core';
 import {MatTableModule} from "@angular/material/table";
 import {TitleCasePipe} from "@angular/common";
 
@@ -15,10 +15,10 @@ import {TitleCasePipe} from "@angular/common";
 export class TableComponent implements AfterViewInit {
   @Input() displayedColumns!: string[];
   @Input() dataSource!: any[];
-  @Input() callback!: (data: any) => void;
+  @Output() rowClicked = new EventEmitter<any>();
 
   ngAfterViewInit(): void {
-    if (!this.displayedColumns || !this.dataSource || !this.callback) {
+    if (!this.displayedColumns || !this.dataSource) {
       throw new Error('Missing required input for table');
     }
   }
