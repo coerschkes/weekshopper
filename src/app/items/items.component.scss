@@ -1,0 +1,41 @@
+.back-button {
+  margin-top: 16px;
+  margin-left: 16px;
+}
+
+.drawer-container {
+  height: 100%;
+}
+
+.flex-element {
+  display: flex;
+  flex-grow: 1;
+  margin: 16px;
+}
+
+.item-image{
+  height: 324px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin: 16px;
+}
+
+.item-heading{
+  font-size: 24px;
+  font-weight: bold;
+  margin: 16px;
+}
+
+.action-button {
+  margin: 8px 0;
+}
+
+.flex-evenly{
+  position: absolute;
+  bottom: 16px;
+  right: 0;
+  left: 0;
+  margin: 0 16px;
+  display: flex;
+  justify-content: space-evenly;
+}
