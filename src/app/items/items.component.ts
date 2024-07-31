@@ -34,6 +34,7 @@ import {environment} from "../../environments/environment";
   ]
 })
 export class ItemsComponent implements OnInit, AfterViewInit, OnDestroy {
+  // todo: Move into separate service -> substitute with connection to database later on
   dataSource: Item[] = [
     {
       id: 1,
