@@ -5,6 +5,10 @@
     <input matInput #message [value]="editItemService.item()?.price">
     <mat-icon matSuffix>euro_symbol</mat-icon>
   </mat-form-field>
+  <app-badge (onRemove)="editItemService.removeBadge($event)"></app-badge>
+  <div class="separator"></div>
+  <app-autocomplete-selector [dataset]="dataset" label="Category"
+                             (onChange)="editItemService.addCategory($event)"></app-autocomplete-selector>
   <div class="flex-evenly">
     <button class="action-button" style="width: 100%" mat-flat-button>
       Delete

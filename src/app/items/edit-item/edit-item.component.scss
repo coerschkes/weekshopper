@@ -3,10 +3,9 @@
   display: flex;
   flex-grow: 1;
   margin-top: 12px;
-  //margin: 16px;
 }
 
-.item-image{
+.item-image {
   width: 100%;
   height: auto;
   max-width: 500px;
@@ -16,18 +15,23 @@
   border-radius: 16px;
 }
 
-.item-heading{
+.item-heading {
   font-size: 24px;
   font-weight: bold;
   margin-top: 6px;
   text-align: center;
 }
 
-.flex-evenly{
+.flex-evenly {
   display: flex;
   justify-content: space-evenly;
 }
 
-.action-button{
+.action-button {
   margin-bottom: 4px;
+}
+
+.separator {
+  margin-top: 16px;
+  width: 100%;
 }
