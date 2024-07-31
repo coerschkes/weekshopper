@@ -31,11 +31,13 @@ export class EditItemService {
     this._badgeService.addBadge({name: category.name, icon: category.icon})
   }
 
-  saveItem() {
+  saveItem(value: string) {
     this._item.update(item => {
       return {...item!, category: this.calculateChangedCategories()}
     })
-    // todo: update price aswell
+    this._item.update(item => {
+      return {...item!, price: parseFloat(value)}
+    })
     this._backendService.updateItem(this._item()!)
   }
 

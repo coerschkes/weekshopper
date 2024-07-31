@@ -2,7 +2,7 @@
   <h2 class="item-heading">{{ editItemService.item()?.name }}</h2>
   <mat-form-field class="flex-element" appearance="outline">
     <mat-label>Price</mat-label>
-    <input matInput #message [value]="editItemService.item()?.price">
+    <input matInput #price [value]="editItemService.item()?.price">
     <mat-icon matSuffix>euro_symbol</mat-icon>
   </mat-form-field>
   <app-badge (onRemove)="editItemService.removeBadge($event)"></app-badge>
@@ -15,7 +15,7 @@
       <mat-icon fontIcon="delete"></mat-icon>
     </button>
     <button style="margin-left: 8px; width: 100%" class="action-button" mat-flat-button
-            (click)="editItemService.saveItem(); bottomSheet.close()">Save
+            (click)="editItemService.saveItem(price.value); bottomSheet.close()">Save
       <mat-icon fontIcon="edit"></mat-icon>
     </button>
   </div>
