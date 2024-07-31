@@ -13,7 +13,7 @@ import {MatInput} from "@angular/material/input";
 import {MatBottomSheet} from "@angular/material/bottom-sheet";
 import {EditItemComponent} from "./edit-item/edit-item.component";
 import {EditItemService} from "./edit-item/edit-item.service";
-import {environment} from "../../environments/environment";
+import {BackendDummyService} from "../core/external/backend.service";
 
 @Component({
   selector: 'app-items',
@@ -34,26 +34,11 @@ import {environment} from "../../environments/environment";
   ]
 })
 export class ItemsComponent implements OnInit, AfterViewInit, OnDestroy {
-  // todo: Move into separate service -> substitute with connection to database later on
-  dataSource: Item[] = [
-    {
-      id: 1,
-      name: "Test",
-      price: 1.99,
-      category: [environment.INITIAL_CATEGORIES[5]]
-    },
-    {
-      id: 2,
-      name: "Paprika",
-      price: 0.99,
-      category: [environment.INITIAL_CATEGORIES[0]]
-    }
-  ]
-
   @ViewChild('drawer') public drawer!: MatDrawer;
 
   constructor(protected fabService: FabService,
               protected itemService: ItemService,
+              protected backendService: BackendDummyService,
               private _browserService: BrowserService,
               private _bottomSheet: MatBottomSheet,
               private _editItemService: EditItemService) {

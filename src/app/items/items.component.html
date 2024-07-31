@@ -3,7 +3,7 @@
     <mat-icon class="back-button" (click)="drawer.toggle()">keyboard_backspace</mat-icon>
   </mat-drawer>
   <mat-drawer-content>
-    <app-table [displayedColumns]="['id', 'name', 'price']" [dataSource]="dataSource"
+    <app-table [displayedColumns]="['id', 'name', 'price']" [dataSource]="backendService.loadItems()"
                (rowClicked)="openBottomSheet($event)"></app-table>
   </mat-drawer-content>
 </mat-drawer-container>
