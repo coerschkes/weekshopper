@@ -12,8 +12,7 @@ import {MatListModule} from "@angular/material/list";
 export class BottomSheetComponent {
   constructor(private _bottomSheetRef: MatBottomSheetRef<BottomSheetComponent>) {}
 
-  openLink(event: MouseEvent): void {
+  close(): void {
     this._bottomSheetRef.dismiss();
-    event.preventDefault();
   }
 }

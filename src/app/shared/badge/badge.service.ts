@@ -1,7 +1,7 @@
 import {Injectable, Signal, signal, WritableSignal} from "@angular/core";
 import {Badge} from "./badge.component";
 
-@Injectable({providedIn: "root"})
+@Injectable({providedIn: 'root'})
 export class BadgeService {
   private readonly _badges: WritableSignal<Badge[]> = signal([])
 

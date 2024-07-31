@@ -1,6 +1,7 @@
 import {AfterViewInit, Component, EventEmitter, Input, Output} from '@angular/core';
 import {MatTableModule} from "@angular/material/table";
 import {TitleCasePipe} from "@angular/common";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-table',
@@ -14,7 +15,7 @@ import {TitleCasePipe} from "@angular/common";
 })
 export class TableComponent implements AfterViewInit {
   @Input() displayedColumns!: string[];
-  @Input() dataSource!: any[];
+  @Input() dataSource!: Observable<any[]>;
   @Output() rowClicked = new EventEmitter<any>();
 
   ngAfterViewInit(): void {
