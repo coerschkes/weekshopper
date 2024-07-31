@@ -26,7 +26,7 @@ export interface Filterable {
 })
 export class AutocompleteSelector implements OnInit {
   @Input() label!: string;
-  @Input() fullDataset!: Filterable[];
+  @Input() dataset!: Filterable[];
   @Output() onChange: EventEmitter<any> = new EventEmitter();
   protected inputControl: FormControl<string | null>;
   protected filteredValues: Observable<string[]> = of();
@@ -52,7 +52,7 @@ export class AutocompleteSelector implements OnInit {
 
   emitSelection() {
     if (this.inputControl.value !== undefined) {
-      let filteredSelection = this.fullDataset.filter(value => value.name === this.inputControl.value!);
+      let filteredSelection = this.dataset.filter(value => value.name === this.inputControl.value!);
       if (filteredSelection.length === 1) {
         this.onChange.emit(filteredSelection[0])
       }
@@ -62,6 +62,6 @@ export class AutocompleteSelector implements OnInit {
 
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
-    return this.fullDataset.map(ed => ed.name).filter(edition => edition.toLowerCase().startsWith(filterValue));
+    return this.dataset.map(ed => ed.name).filter(edition => edition.toLowerCase().startsWith(filterValue));
   }
 }
