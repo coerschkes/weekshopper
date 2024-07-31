@@ -1,16 +1,16 @@
-<mat-form-field class="pokemon-name-form-field" appearance="outline">
-  <mat-label>Category</mat-label>
+<mat-form-field class="autocomplete-selector" appearance="outline">
+  <mat-label>{{ label }}</mat-label>
   <input type="text"
-         placeholder="Name"
+         placeholder="{{label}}"
          matInput
-         [formControl]="categoryControl"
+         [formControl]="inputControl"
          [matAutocomplete]="auto">
   <mat-autocomplete (optionSelected)="emitSelection()"
                     autoActiveFirstOption
                     #auto="matAutocomplete">
-    @for (category of filteredCategories | async; track category) {
+    @for (value of filteredValues | async; track value) {
       <mat-option
-                  [value]="category">{{ category }}
+        [value]="value">{{ value }}
       </mat-option>
     }
   </mat-autocomplete>
