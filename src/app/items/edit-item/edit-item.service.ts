@@ -31,6 +31,10 @@ export class EditItemService {
     this._badgeService.addBadge({name: category.name, icon: category.icon})
   }
 
+  deleteItem(){
+    this._backendService.deleteItem(this._item()!)
+  }
+
   saveItem(value: string) {
     this._item.update(item => {
       return {...item!, category: this.calculateChangedCategories()}

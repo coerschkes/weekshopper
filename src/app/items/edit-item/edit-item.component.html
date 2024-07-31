@@ -10,7 +10,8 @@
   <app-autocomplete-selector [dataset]="dataset" label="Category"
                              (onChange)="editItemService.addCategory($event)"></app-autocomplete-selector>
   <div class="flex-evenly">
-    <button class="action-button" style="width: 100%" mat-flat-button>
+    <button class="action-button" style="width: 100%" mat-flat-button
+            (click)="editItemService.deleteItem(); bottomSheet.close()">
       Delete
       <mat-icon fontIcon="delete"></mat-icon>
     </button>
