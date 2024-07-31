@@ -14,6 +14,8 @@ export interface BackendService {
   createItem(item: Item): void
 
   deleteItem(item: Item): void
+
+  findCategory(name: string): Observable<Category>
 }
 
 @Injectable({providedIn: 'root'})
@@ -58,5 +60,13 @@ export class BackendDummyService implements BackendService {
 
   loadItems(): Observable<Item[]> {
     return of(Object.assign([], this._items))
+  }
+
+  findCategory(name: string): Observable<Category> {
+    let find = environment.INITIAL_CATEGORIES.find(c => c.name === name);
+    if (!find) {
+      return of()
+    }
+    return of(find!);
   }
 }
