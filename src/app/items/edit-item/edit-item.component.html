@@ -1,6 +1,5 @@
 <app-bottom-sheet>
   <h2 class="item-heading">{{ editItemService.item()?.name }}</h2>
-  <img [src]="editItemService.item()?.image" alt="" class="item-image">
   <mat-form-field class="flex-element" appearance="outline">
     <mat-label>Price</mat-label>
     <input matInput #message [value]="editItemService.item()?.price">

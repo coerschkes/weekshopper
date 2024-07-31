@@ -33,12 +33,20 @@ import {EditItemService} from "./edit-item/edit-item.service";
   ]
 })
 export class ItemsComponent implements OnInit, AfterViewInit, OnDestroy {
-  dataSource: Item[] = [{id: 1, name: "test", image: "", price: 1.99}, {
-    id: 2,
-    name: "Paprika",
-    image: "https://minio.luke-software.de/1000/articles/b1cde6db-3d27-4a95-8086-a002312fc372/98143-manss-frischeservice-paprika-rot-flow-3er-web.jpg",
-    price: 0.99
-  }]
+  dataSource: Item[] = [
+    {
+      id: 1,
+      name: "test",
+      price: 1.99,
+      category: [{name: "Andere", id: 2, icon: ""}]
+    },
+    {
+      id: 2,
+      name: "Paprika",
+      price: 0.99,
+      category: [{name: "Gemüse", id: 1, icon: ""}]
+    }
+  ]
 
   @ViewChild('drawer') public drawer!: MatDrawer;
 
@@ -60,11 +68,6 @@ export class ItemsComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     this._browserService.bindDrawer(this.drawer)
-  }
-
-  openDetailDrawer(item: Item) {
-    this.itemService.updateItem(item)
-    this.drawer.toggle()
   }
 
   toggleDrawer() {

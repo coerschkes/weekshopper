@@ -1,6 +1,8 @@
+import {Category} from "./category";
+
 export interface Item {
   id: number;
   name: string;
   price: number;
-  image: string;
+  category: Category[];
 }

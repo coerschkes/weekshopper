@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {BottomSheetComponent} from "../../shared/bottom-sheet/bottom-sheet.component";
-import {MatButton} from "@angular/material/button";
-import {MatFormField, MatLabel, MatSuffix} from "@angular/material/form-field";
-import {MatIcon} from "@angular/material/icon";
-import {MatInput} from "@angular/material/input";
+import {MatButtonModule} from "@angular/material/button";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatIconModule} from "@angular/material/icon";
+import {MatInputModule} from "@angular/material/input";
 import {EditItemService} from "./edit-item.service";
 
 @Component({
@@ -11,12 +11,10 @@ import {EditItemService} from "./edit-item.service";
   standalone: true,
   imports: [
     BottomSheetComponent,
-    MatButton,
-    MatFormField,
-    MatIcon,
-    MatInput,
-    MatLabel,
-    MatSuffix
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatButtonModule
   ],
   templateUrl: './edit-item.component.html',
   styleUrl: './edit-item.component.scss'
