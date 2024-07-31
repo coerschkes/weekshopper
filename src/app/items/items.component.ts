@@ -38,9 +38,9 @@ export class ItemsComponent implements OnInit, AfterViewInit, OnDestroy {
   dataSource: Item[] = [
     {
       id: 1,
-      name: "test",
+      name: "Test",
       price: 1.99,
-      category: [environment.INITIAL_CATEGORIES[0]]
+      category: [environment.INITIAL_CATEGORIES[5]]
     },
     {
       id: 2,
