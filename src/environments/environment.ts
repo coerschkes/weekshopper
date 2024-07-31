@@ -1,5 +1,6 @@
 export const environment = {
   APP_NAME: 'Weekshopper',
+  // todo: Move to database and cache on first load
   INITIAL_CATEGORIES: [
     {id: 1, name: "Vegetables", icon: "cabbage.png"},
     {id: 2, name: "Canned food", icon: "canned-food.png"},
