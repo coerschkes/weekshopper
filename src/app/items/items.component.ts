@@ -13,6 +13,7 @@ import {MatInput} from "@angular/material/input";
 import {MatBottomSheet} from "@angular/material/bottom-sheet";
 import {EditItemComponent} from "./edit-item/edit-item.component";
 import {EditItemService} from "./edit-item/edit-item.service";
+import {environment} from "../../environments/environment";
 
 @Component({
   selector: 'app-items',
@@ -38,13 +39,13 @@ export class ItemsComponent implements OnInit, AfterViewInit, OnDestroy {
       id: 1,
       name: "test",
       price: 1.99,
-      category: [{name: "Andere", id: 2, icon: ""}]
+      category: [environment.INITIAL_CATEGORIES[0]]
     },
     {
       id: 2,
       name: "Paprika",
       price: 0.99,
-      category: [{name: "Gemüse", id: 1, icon: ""}]
+      category: [environment.INITIAL_CATEGORIES[0]]
     }
   ]
 
