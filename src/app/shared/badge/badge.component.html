@@ -2,7 +2,7 @@
   <mat-chip-row
     class="badge-chip"
     [editable]="true" title="{{badge.name}}"
-    (removed)="badgeService.removeBadge(badge)">
+    (removed)="onRemove.emit(badge)">
       <img class="badge-icon" ngSrc="/icons/{{badge.icon}}" alt="" width="512" height="512"/>
       <div class="badge-text">
         {{ badge.name }}

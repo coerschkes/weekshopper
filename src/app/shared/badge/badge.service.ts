@@ -18,4 +18,8 @@ export class BadgeService {
   get badges(): Signal<Badge[]> {
     return this._badges.asReadonly()
   }
+
+  reset() {
+    this._badges.update(() => [])
+  }
 }

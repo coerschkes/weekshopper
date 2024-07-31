@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {MatChipsModule} from "@angular/material/chips";
 import {MatIconModule} from "@angular/material/icon";
 import {BadgeService} from "./badge.service";
@@ -10,7 +10,7 @@ export interface Badge {
 }
 
 @Component({
-  selector: 'app-category-badge',
+  selector: 'app-badge',
   standalone: true,
   imports: [
     MatChipsModule,
@@ -21,6 +21,8 @@ export interface Badge {
   styleUrl: './badge.component.scss'
 })
 export class BadgeComponent {
+  @Output() onRemove: EventEmitter<Badge> = new EventEmitter();
+
   constructor(protected badgeService: BadgeService) {
   }
 
