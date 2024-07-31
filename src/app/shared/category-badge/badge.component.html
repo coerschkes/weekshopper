@@ -1,0 +1,14 @@
+@for (badge of badgeService.badges(); track badge) {
+  <mat-chip-row
+    class="badge-chip"
+    [editable]="true" title="{{badge.name}}"
+    (removed)="badgeService.removeBadge(badge)">
+      <img class="badge-icon" ngSrc="/icons/{{badge.icon}}" alt="" width="512" height="512"/>
+      <div class="badge-text">
+        {{ badge.name }}
+      </div>
+    <button matChipRemove [attr.aria-label]="'remove ' + badge.name">
+      <mat-icon class="remove-button">cancel</mat-icon>
+    </button>
+  </mat-chip-row>
+}
